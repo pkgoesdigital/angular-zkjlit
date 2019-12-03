@@ -1,5 +1,26 @@
 <h2>Products</h2>
 
+<!-- structural directive - can shape/reshape structure of DOM -->
+<div *ngFor="let product of products">
+  <h3>
+    <!-- property binding [] -->
+    <!-- allows use of property value in template  -->
+    <a [title]="product.name + ' details'">
+    <!-- interpolation {{}} allows access to a specific attribute of an elem at txt -->
+    {{product.name}}
+    </a>
+  </h3>
+
+<!-- pipes in description of all products (if present in component) -->
+  <p *ngIf="product.description">
+    Description: {{ product.description }}
+  </p>
+
+  <button (click)="share()">
+    Share
+  </button>
+</div>
+
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.
