@@ -1,11 +1,11 @@
 <h2>Products</h2>
 
 <!-- structural directive - can shape/reshape structure of DOM -->
-<div *ngFor="let product of products">
+<div *ngFor="let product of products; index as productId">
   <h3>
     <!-- property binding [] -->
     <!-- allows use of property value in template  -->
-    <a [title]="product.name + ' details'">
+    <a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
     <!-- interpolation {{}} allows access to a specific attribute of an elem at txt -->
     {{product.name}}
     </a>
