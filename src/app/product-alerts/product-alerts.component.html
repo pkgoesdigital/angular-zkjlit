@@ -1,0 +1,9 @@
+<!-- shows or hids the Notify Me button based on price of product  -->
+<!-- in this example, if product.price is > 700 -->
+<!-- <p *ngIf="product.price > 700">
+  <button>Notify Me</button>
+</p> -->
+<!-- allows for component to emit an event when Notify Me is clicked  -->
+<p *ngIf="product.price > 700">
+  <button (click)="notify.emit()">Notify Me</button>
+</p>

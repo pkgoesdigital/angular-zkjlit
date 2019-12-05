@@ -19,7 +19,17 @@
   <button (click)="share()">
     Share
   </button>
+
+<!-- Displays the new product alert component as a child of the product list -->
+<!-- app-product-alerts is selector for component in HTML  -->
+<!-- uses property binding with [product] -->
+  <app-product-alerts
+  [product]="product"
+  (notify)="onNotify()">
+  </app-product-alerts>
+  
 </div>
+
 
 
 <!-- 
