@@ -1,6 +1,7 @@
 <h3>Cart</h3>
 
 <!-- adds link from cart page to shipping page -->
+<!-- allows user to view items in cart, and add name and address to shipping form  -->
 <p>
   <a routerLink="/shipping">Shipping Prices</a>
 </p>
@@ -9,3 +10,22 @@
   <span>{{ item.name }}</span>
   <span>{{ item.price | currency }}</span>
 </div>
+
+<form [formGroup]="checkoutForm" ngSubmit="onSubmit(checkoutForm.value)">
+
+  <div>
+    <label for="name">
+      Name 
+    </label>
+    <input id="name" type="text" formControlName="name">
+  </div>
+
+  <div>
+    <label for="address">
+      Address
+    </label>
+    <input id="address" type="text" formControlName="address">
+  </div>
+
+  <button class="button" type="submit">Purchase</button>
+</form>
